@@ -14,6 +14,7 @@ import pe.edu.upeu.ajax.dao.ProductoDao;
 import pe.edu.upeu.ajax.dao.UsuarioDao;
 import pe.edu.upeu.ajax.daoImpl.ProductoDaoImpl;
 import pe.edu.upeu.ajax.daoImpl.UsuarioDaoImpl;
+import pe.edu.upeu.ajax.entity.Usuario;
 
 /**
  * Servlet implementation class UsuarioController
@@ -38,6 +39,19 @@ public class UsuarioController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
+		int op = Integer.parseInt(request.getParameter("opc"));
+		String user = request.getParameter("user");
+		String pass = request.getParameter("pass");
+		switch (op) {
+		case 1:
+			out.println(udao.create(new Usuario(user,pass,1)));
+			break;
+
+		default:
+			break;
+		}
+		/*
+		
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
 		System.out.println(user+" / "+pass);
@@ -45,7 +59,7 @@ public class UsuarioController extends HttpServlet {
 			out.println(gson.toJson(pdao.readAll()));
 		}else {
 			out.println("Datos incorrectos...!");
-		}
+		}*/
 	}
 
 	/**

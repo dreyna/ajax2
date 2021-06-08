@@ -8,17 +8,20 @@
 <link rel="stylesheet" href="recursos/css/bootstrap.min.css" media="all" />
 </head>
 <body>
-<div class="container">
+<div class="container" style="max-width: 500px">
+	<h1>Registrar Usuario</h1>
+	<hr />
 	<div class="form-group">
 		<input type="text" class="form-control" name="username" id="username"/>
 	</div>
 	<div class="form-group">
 		<input type="password" class="form-control" name="password" id="password"/>
-	</div><div class="form-group">
-		<button class="btn btn-primary" onclick="login()">Enviar</button>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary" onclick="prueba()">Enviar</button>
 	</div>	
 </div>
-<div class="container" id="resultado"></div>
+<div class="container" id="resultado" style="max-width: 500px"></div>
 
 <script src="recursos/js/jquery.js"></script>
 <script src="recursos/js/bootstrap.min.js"></script>
